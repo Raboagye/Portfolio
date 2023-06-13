@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('db.onlinewebfonts.com/c/cb8d4d30de89efdc96a98761ede26d3d?family=Mongolian+Baiti');
+
+
+@layer components{
+  .inner-shadow {
+    box-shadow: inset 8px 20px 5px 0px rgba(0, 0, 0, 1);
+  }
+  .contact-inner-shadow {
+    box-shadow: inset 16px 26px 4px 0px rgba(137, 133, 133, 0.25);
+  }
+  .button-inner-shadow {
+    box-shadow: inset 8px 26px 4px 0px rgba(0, 0, 0, 1);
+  }
+  .download-inner-shadow {
+    box-shadow: inset 8px 34px 4px 0px rgba(0, 0, 0, 1);
+  }
+  .origin-center-left{
+    transform-origin: center left;
+  }
+  
+  .moveAnimate {
+    animation: rotate 20s infinite linear;
+  }
+  
+  
+  @keyframes rotate {
+    from {
+      transform: rotateX(0deg) rotateY(0deg)
+    }
+    to {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+  
+}
+
+@layer utilities {
+  .mt-39{
+    margin-top: 136px;
+  }
+}
+
+
+
+
+
