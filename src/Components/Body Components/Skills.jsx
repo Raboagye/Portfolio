@@ -21,9 +21,9 @@ import group15 from "../../assets/skills/Group 15.png"
 
 const Skills = () => {
   return (
-    <div className='flex-[0.65] w-full bg-gray-700 my-32'>
+    <div className='flex-[0.9] lg:flex-[0.65] flex flex-col items-center w-full bg-gray-700 my-32 dark:bg-black transition-all duration-500'>
          <p className='text-[36px] text-white text-center pt-16 font-body text-transform capitalize'>Tech & <span className='text-[#009D66]'>Tools</span> </p>
-         <p className='text-[20px] text-gray-500 text-center pt-6 pb-24 font-body leading-8 text-transform capitalize'>i have been working with recently</p>
+         <p className='text-[20px] text-gray-500 w-[80%] text-center pt-6 pb-24 font-body leading-8 text-transform capitalize'>i have been working with recently</p>
          <div className='w-[60%] m-auto pt-24 relative h-[70vh]'>
             <img src={frame24} alt="" className='w-[10%] top-[-5vh] absolute left-[-14%] object-contain' />
             <img src={frame18} alt="" className='w-[10%] top-[51vh] absolute left-[-20%] object-contain' />

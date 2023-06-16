@@ -8,7 +8,7 @@ import Works from './Body Components/Works'
 
 const Body = () => {
   return (
-    <div className='flex-[0.65] rounded-2xl'>
+    <div className='rounded-2xl flex-[1] lg:flex-[0.65]'>
       <Home />
       <AboutMe/>
       <Skills/>
