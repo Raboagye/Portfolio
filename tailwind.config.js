@@ -1,10 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
+    screens: {
+      lg: "1130px",
+      md: "768px",
+      mid: "900px",
+      small: "590px"
+
+    },
     
     extend: {
+
 
       fontFamily: {
         body: ["Mongolian Baiti"]

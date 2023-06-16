@@ -7,9 +7,10 @@ import {BsInstagram} from "react-icons/Bs"
 
 const LeftSideBar = () => {
   return (
-    <div className='flex-[0.2] w-full h-[calc(100vh-58px)] bg-gray-700 sticky top-[58px]'>
-        <h1 className='text-white text-[1.6rem] tracking-widest font-body pt-8'>RICHARD ABOAGYE</h1>
-        <img src={rich} className='w-[90%] mx-auto my-10'  alt="" />
+    <div className='hidden mid:block flex-[0.25] w-full h-[calc(100vh-58px)] bg-gray-700 sticky top-[58px] box-border lg:flex-[0.2] max-h-[690px] transition-all duration-500 dark:bg-black'>
+      <h1 className='text-white text-justify tracking-widest md:text-[18px] lg:text-[20px] sm:text-[20px] font-body pt-8 pl-4'>RICHARD ABOAGYE</h1>
+      <div className='flex-[0.2] w-full h-[calc(100vh-58px)] bg-transparent sticky top-[58px] px-4'>
+        <img src={rich} className='w-full object-contain mx-auto my-10'  alt="" />
         <p className='text-gray-500 font-body text-center'>Front-end Engineer</p>
         <p className='text-gray-500 font-body text-center mt-4'>www.richyaboagye@gmail.com</p>
         <p className='text-gray-500 font-body text-center mt-10'>© 2023 Richard, All Rights Reserved</p>
@@ -21,6 +22,9 @@ const LeftSideBar = () => {
         </div>
         <button className='text-white font-body tracking-widest text-center w-full bg-black py-4 contact-inner-shadow'>CONTACT ME</button>
     </div>
+
+    </div>
+    
   )
 }
 

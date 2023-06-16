@@ -2,9 +2,9 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div className='flex-[0.65] w-full bg-gray-700 flex flex-col items-center h-[100vh] my-16'>
+    <div className='flex-[0.9] lg:flex-[0.65] w-full bg-gray-700 flex flex-col items-center h-[100vh] my-16 dark:bg-black transition-all duration-500'>
       <p className='text-[36px] text-white text-center pt-8 font-body '>Contact Richard</p>
-      <form className='w-[60%] bg-black mt-8 p-8 flex flex-col items-center rounded-2xl'>
+      <form className='w-full small:w-[80%] md:min-w-[470px] md:w-[60%] bg-black mt-8 p-8 flex flex-col items-center rounded-2xl'>
         <div className='w-full relative'>
           <input id='email-address' placeholder='richardaboagye100@gmail.com' type="email" required className='w-full  h-8 border-0 border-b border-[#94A3B8] peer outline-0 bg-transparent py-1 pr-3 text-gray-400  focus:border-[#009D66] placeholder-transparent' />
           <label for="email-address" className='absolute left-0 py-1 pr-3 -top-5  cursor-text text-gray-600  peer-focus:text-xs peer-focus:-top-5 ease-in-out text-xs peer-focus:text-[#009D66]  transition-all duration-300 uppercase peer-placeholder-shown:top-0 peer-placeholder-shown:text-sm'>Email</label>
