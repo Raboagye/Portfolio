@@ -81,7 +81,9 @@
   @apply mid:hidden w-[250px] h-[calc(100vh-58px)] max-h-[690px] transform z-[999] shadow-gray-950 shadow-md fixed top-[58px] box-border transition-transform ease-in-out duration-1000 ; 
 }
 
-
+*{
+  scroll-behavior: smooth;
+}
 
 
 

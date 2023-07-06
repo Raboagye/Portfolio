@@ -2,28 +2,63 @@ import React from 'react'
 import rich from "../assets/edf.png"
 import {AiFillGithub, AiFillLinkedin, AiFillFacebook} from "react-icons/Ai"
 import {BsInstagram} from "react-icons/Bs"
+import { motion, stagger } from 'framer-motion'
 
 
 
 const LeftSideBar = () => {
-  return (
-    <div className='hidden mid:block flex-[0.25] w-full h-[calc(100vh-58px)] bg-gray-700 sticky top-[58px] box-border lg:flex-[0.2] max-h-[690px] transition-all duration-500 dark:bg-black'>
-      <h1 className='text-white text-justify tracking-widest md:text-[18px] lg:text-[20px] sm:text-[20px] font-body pt-8 pl-4'>RICHARD ABOAGYE</h1>
-      <div className='flex-[0.2] w-full h-[calc(100vh-58px)] bg-transparent sticky top-[58px] px-4'>
-        <img src={rich} className='w-full object-contain mx-auto my-10'  alt="" />
-        <p className='text-gray-500 font-body text-center'>Front-end Engineer</p>
-        <p className='text-gray-500 font-body text-center mt-4'>www.richyaboagye@gmail.com</p>
-        <p className='text-gray-500 font-body text-center mt-10'>© 2023 Richard, All Rights Reserved</p>
-        <div className='flex gap-8 w-full justify-center my-10'>
-            <AiFillGithub className='text-white text-xl'/>
-            <AiFillLinkedin className='text-white text-xl'/>
-            <AiFillFacebook className='text-white text-xl'/>
-            <BsInstagram className='text-white text-xl'/>
-        </div>
-        <button className='text-white font-body tracking-widest text-center w-full bg-black py-4 contact-inner-shadow'>CONTACT ME</button>
-    </div>
 
-    </div>
+  const header2 = {
+    initial: {
+      y: -60,
+      opacity: 0,
+      transition: { duration: 0.05, }
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      }
+    }
+  }
+  const stagger2 = {
+    animate: {
+      transition: {
+        delayChildren: 0.01,
+        staggerChildren: 0.1,
+        staggerDirection: 1
+      }
+    }
+  }
+
+
+  return (
+    <motion.div initial="initial" animate="animate" variants={stagger2} className='hidden mid:block flex-[0.25] w-full h-[calc(100vh-58px)] bg-gray-700 sticky top-[58px] box-border lg:flex-[0.2] max-h-[690px] transition-all duration-500 dark:bg-black'>
+      <motion.h1 initial={{y:-20, opacity:0}} animate={{y:0, opacity: 1}} transition={{type: "spring", duration: 2}} className='text-white text-justify tracking-widest md:text-[18px] lg:text-[20px] sm:text-[20px] font-body pt-8 pl-4'>RICHARD ABOAGYE</motion.h1>
+      <motion.div className='flex-[0.2] w-full h-[calc(100vh-58px)] bg-transparent sticky top-[58px] px-4'>
+        <motion.img initial={{ scale:0.7}} animate={{ scale: 1}} transition={{ duration:1}} src={rich} className='w-full object-contain mx-auto my-10'  alt="" />
+        <motion.p variants={header2} className='text-gray-500 font-body text-center'>Front-end Engineer</motion.p>
+        <motion.p variants={header2} className='text-gray-500 font-body text-center mt-4'>www.richyaboagye@gmail.com</motion.p>
+        <motion.p variants={header2} className='text-gray-500 font-body text-center mt-10'>© 2023 Richard, All Rights Reserved</motion.p>
+        <motion.div variants={stagger2} className='flex gap-8 w-full justify-center my-10'>
+          <motion.div variants={header2}>
+            <AiFillGithub className='text-white text-xl' />
+          </motion.div>
+          <motion.div variants={header2}>
+            <AiFillLinkedin className='text-white text-xl' />
+          </motion.div>
+          <motion.div variants={header2}>
+            <AiFillFacebook className='text-white text-xl' />
+          </motion.div>
+          <motion.div variants={header2}>
+            <BsInstagram className='text-white text-xl' />
+          </motion.div>
+        </motion.div>
+        <motion.button initial={{scale: 0}} animate={{scale: 1}} transition={{duration: 1, delay: 0.25}} className='text-white font-body tracking-widest text-center w-full bg-black py-4 contact-inner-shadow'>CONTACT ME</motion.button>
+    </motion.div>
+
+    </motion.div>
     
   )
 }

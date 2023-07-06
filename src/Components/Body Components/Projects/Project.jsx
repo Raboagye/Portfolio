@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import { motion, useInView, useAnimation } from 'framer-motion'
 
 const Project = () => {
+  const ref = useRef(null)
+  const isInView = useInView(ref)
+  const mainControls = useAnimation()
+  
+
+  useEffect(()=> {
+    isInView? mainControls.start("visible") : mainControls.start("hidden")
+    console.log("In view", isInView)
+    
+  }, [isInView])
+
+
   return (
-    <div className='container flex-[0.9] lg:flex-[0.65] w-full h-[100vh] relative perspective-1000 mt-16 flex flex-col items-center md:items-start md:pl-16 lg:pl-0'>
+    <div 
+     className='container flex-[0.9] lg:flex-[0.65] w-full h-[100vh] relative perspective-1000 mt-16 flex flex-col items-center md:items-start md:pl-16 lg:pl-0'>
           <div className='group w-[350px] h-[350px] md:w-[400px] md:h-[400px] flex justify-center md:justify-start'>
               <div className='w-[125px] h-[125px] md:w-[250px]  md:h-[250px] transform-style-3d moveAnimate group mt-20'>
                   <div className='w-[125px] h-[125px] md:w-[250px]  md:h-[250px] text-center py-[50px] md:py-[100px] text-white bg-black border-[2px] border-white text-[32px] box-border absolute translate-z-[62.5px]  md:translate-z-[125px]  hover:bg-[#009D66] opacity-90 group-hover:translate-z-[125px] md:group-hover:translate-z-[250px]  duration-200 ease-in'>Front</div>
@@ -14,7 +28,19 @@ const Project = () => {
               </div>
 
           </div>
-          <div className='w-[80%] md:w-[43%]  mt-16 flex flex-col items-center md:absolute md:right-0 pt-4 md:mt-96'>
+          <motion.div 
+          ref={ref} 
+          variants={{
+            hidden: {opacity: 0, y: [0, -120, 0]},
+            visible: {opacity: 1, y: [0,-120, 0], transition:{duration: 1.1, delay: 0.25}},
+            
+          }}
+          initial="hidden"
+          animate={mainControls}
+          transition={{type:"spring", bounce: 0.4}}
+         
+          
+          className='w-[80%] md:w-[43%]  mt-16 flex flex-col items-center md:absolute md:right-0 pt-4 md:mt-64'>
               <p className='text-[20px] text-white text-center pt-8 font-body text-sm md:text-sm lg:text-[1rem]'>Musix: A Music App</p>
               <div>
                   <p className='text-gray-500 pt-8 font-body text-sm md:text-sm lg:text-[1rem]'>• Fully functional music app just like a MERN stack web app</p>
@@ -23,7 +49,7 @@ const Project = () => {
               </div>
 
 
-          </div>
+          </motion.div>
 
     </div>
   )

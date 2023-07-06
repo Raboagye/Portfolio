@@ -1,25 +1,75 @@
 import React from 'react'
 
+import { motion} from 'framer-motion'
+import { stagger2 } from '../../assets/animation'
+
 const AboutMe = () => {
+
+  const header3 = {
+    initial: {
+      y: 80,
+      transition: { duration: 0.05, }
+    },
+    animate: {
+      y:0,
+      transition: {
+        duration: 0.8
+      }
+    }
+  }
+  const header2 = {
+    initial: {
+      y: 60,
+      transition: { duration: 0.05, }
+    },
+    animate: {
+      y:0,
+      transition: {
+        duration: 0.8
+      }
+    }
+  }
+  const header4 = {
+    initial: {
+      y: -60,
+      opacity: 0,
+      rotate: [ 0],
+      transition: { duration: 0.05, }
+    },
+    animate: {
+      y:0,
+      opacity: 1,
+      rotate: [120,0],
+      transition: {
+        duration: 7, delay: 0.25, type: "spring", bounce: 0.8,
+      }
+    }
+  }
+
+  
+
   return (
-    <div className='flex-[0.9] lg:flex-[0.65] w-full bg-gray-700 relative flex flex-col items-center dark:bg-black transition-all duration-500'>
-      <p className='text-[36px] w-[80%] text-white text-center pt-16 mt-8 font-body text-transform capitalize'>every successful journey begins with </p>
-      <p className='text-[36px] text-[#009D66] text-center pt-4 font-body '><span className='text-white'>A</span> Story<span className='text-white'>,</span></p>
-      <p className='text-sm w-[80%] md:text-sm lg:text-[1rem] text-gray-500 text-center pt-16 font-body leading-8'>
-        I'm Richard Aboagye, a Frontend Engineer with a Bachelor’s Degree in Mechanical<br />Engineering. I am a Ghanaian developer with extensive knowledge in React.js and <br /> current technologies.
+    <motion.div initial="initial" whileInView="animate" transition={{ staggerChildren: 0.1 }} viewport={{once:false, amount: 0.6}} id='about' className='flex-[0.9] lg:flex-[0.65] w-full bg-gray-700 relative mt-8 flex flex-col items-center dark:bg-black transition-all duration-500 '>
+      <motion.p variants={header3} className='text-[36px] w-[80%] text-white text-center  mt-20 font-body text-transform capitalize'>every successful journey begins with </motion.p>
+      <motion.p variants={header3} className='text-[36px] text-[#009D66] text-center mt-4 font-body '><span className='text-white'>A</span> Story<span className='text-white'>,</span></motion.p>
+      <motion.div
+        transition={{staggerChildren: 1}}
+        className='text-sm w-[80%] md:text-sm lg:text-[1rem] text-gray-500 text-center mt-12 font-body leading-8'><motion.p className='leading-8' variants={header2}>I'm Richard Aboagye, a Frontend Engineer with a Bachelor’s Degree in Mechanical</motion.p>
+        <motion.p variants={header2} className='leading-8'>Engineering. I am a Ghanaian developer with extensive knowledge in React.js and</motion.p> <motion.p variants={header2} className='leading-8'>current technologies.</motion.p>
         <br />
         <br />
         <br />
-        I have a passion for creating seamless user experiences and take pride in designing my <br /> own mockups using Figma. With a solid foundation in engineering and expertise in <br />  frontend development, I am excited to bring my skills and enthusiasm to contribute as a <br />valuable member of your team.
-      </p>
-      <div className='w-full pt-20 mb-16'>
-      <button className='bg-[#009D66] py-2 px-4 text-white font-body rounded-md download-inner-shadow border-[#009D66] absolute border-t-[1px] left-[50%] transform translate-x-[-50%] text-sm md:text-sm lg:text-[1rem]'>Download Cv</button>
+        <motion.p variants={header2} className='leading-8'>I have a passion for creating seamless user experiences and take pride in designing my</motion.p>  <motion.p variants={header2} className='leading-8'>own mockups using Figma. With a solid foundation in engineering and expertise in</motion.p>  <motion.p variants={header2}>frontend development, I am excited to bring my skills and enthusiasm to contribute as a </motion.p> <motion.p variants={header2} className='leading-8'>valuable member of your team.</motion.p>
+      </motion.div>
+      <motion.div
+        variants={header4}
+        className='w-full pt-28 mb-16'>
+        <button className='bg-[#009D66] py-2 px-4 text-white font-body rounded-md download-inner-shadow border-[#009D66] absolute border-t-[1px] left-[50%] transform translate-x-[-50%] text-sm md:text-sm lg:text-[1rem]'>Download Cv</button>
 
-      </div>
+      </motion.div>
 
-      
 
-    </div>
+    </motion.div>
   )
 }
 
