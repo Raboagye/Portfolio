@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 
-const Project = () => {
+const Project = ({HandleProject, activeScroll}) => {
   const ref = useRef(null)
   const isInView = useInView(ref)
   const mainControls = useAnimation()
@@ -9,8 +9,14 @@ const Project = () => {
 
   useEffect(()=> {
     isInView? mainControls.start("visible") : mainControls.start("hidden")
-    console.log("In view", isInView)
     
+  }, [isInView])
+
+  useEffect(()=>{
+    if (isInView && !activeScroll){
+      HandleProject()
+    }
+       
   }, [isInView])
 
 

@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
-import { motion} from 'framer-motion'
-import { stagger2 } from '../../assets/animation'
+import { motion, useInView} from 'framer-motion'
 
-const AboutMe = () => {
+
+const AboutMe = ({HandleAbout, activeScroll}) => {
+  const ref= useRef(null)
+  const isInView = useInView(ref, {amount: 0.8})
 
   const header3 = {
     initial: {
@@ -15,7 +17,8 @@ const AboutMe = () => {
       transition: {
         duration: 0.8
       }
-    }
+    },
+
   }
   const header2 = {
     initial: {
@@ -42,14 +45,22 @@ const AboutMe = () => {
       rotate: [120,0],
       transition: {
         duration: 7, delay: 0.25, type: "spring", bounce: 0.8,
-      }
+      },
     }
+
   }
+
+  useEffect(()=>{
+    if (isInView && !activeScroll){
+      HandleAbout()
+    }
+       
+  }, [isInView])
 
   
 
   return (
-    <motion.div initial="initial" whileInView="animate" transition={{ staggerChildren: 0.1 }} viewport={{once:false, amount: 0.6}} id='about' className='flex-[0.9] lg:flex-[0.65] w-full bg-gray-700 relative mt-8 flex flex-col items-center dark:bg-black transition-all duration-500 '>
+    <motion.div ref={ref} initial="initial" whileInView="animate" transition={{ staggerChildren: 0.1 }} viewport={{once:false, amount: 0.6}} id='about' className='flex-[0.9] lg:flex-[0.65] w-full bg-gray-700 relative mt-8 flex flex-col items-center dark:bg-black transition-all duration-500 '>
       <motion.p variants={header3} className='text-[36px] w-[80%] text-white text-center  mt-20 font-body text-transform capitalize'>every successful journey begins with </motion.p>
       <motion.p variants={header3} className='text-[36px] text-[#009D66] text-center mt-4 font-body '><span className='text-white'>A</span> Story<span className='text-white'>,</span></motion.p>
       <motion.div

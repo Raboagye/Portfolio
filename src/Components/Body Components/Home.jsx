@@ -5,7 +5,17 @@ import object3 from "../../assets/3dservices.png"
 import object4 from "../../assets/3dweb.png"
 import { motion, useInView, useAnimation, delay } from 'framer-motion'
 
-const Home = () => {
+const Home = ({HandleHome, activeScroll}) => {
+
+      const ref= useRef(null)
+      const isInView = useInView(ref, {amount: 0.5})
+      
+      useEffect(()=>{
+        if (isInView && !activeScroll){
+          HandleHome()
+        }
+           
+      }, [isInView])
     
       const header3 = {
         hidden: {
@@ -67,6 +77,7 @@ const Home = () => {
             transition={{ staggerChildren: 0.1 }}
             viewport={{once:false, amount: 0.3}}
             variants={homeAnimation}
+            ref={ref}
             id='home' className='flex-[0.9] mid:flex-[0.65] w-full bg-gray-700 flex flex-col items-center dark:bg-black '>
 
             <div className='flex-[0.9] mid:flex-[0.65] w-full bg-gray-700 flex flex-col items-center dark:bg-black transition-all duration-500'>

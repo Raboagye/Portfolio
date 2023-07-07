@@ -1,11 +1,22 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useEffect, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 
-const Contact = () => {
+const Contact = ({HandleContact, activeScroll}) => {
+
+      const ref= useRef(null)
+      const isInView = useInView(ref, {amount: 0.5})
+
+
+      useEffect(()=>{
+        if (isInView && !activeScroll){
+          HandleContact()
+        }
+           
+      }, [isInView])
 
   return (
-    <div id='contact' className='flex-[0.9] lg:flex-[0.65] w-full bg-gray-700 flex flex-col items-center my-16 dark:bg-black transition-all duration-500 pt-16 pb-16'>
-      <motion.div  className='flex flex-col items-center w-full'>
+    <div ref={ref} id='contact' className='flex-[0.9] lg:flex-[0.65] w-full bg-gray-700 flex flex-col items-center my-16 dark:bg-black transition-all duration-500 pt-16 pb-16'>
+      <div  className='flex flex-col items-center w-full'>
 
         <p className='text-[36px] text-white text-center pt-8 font-body '>Contact Richard</p>
         <form  className='w-full small:w-[80%] md:min-w-[470px] md:w-[60%] bg-black mt-8 p-8 flex flex-col items-center rounded-2xl'>
@@ -37,7 +48,7 @@ const Contact = () => {
 
         </form>
 
-      </motion.div>
+      </div>
       
 
     </div>
