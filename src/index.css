@@ -71,6 +71,10 @@
   font-size: calc(0.3rem + 0.7vw)
 }
 
+.fontSize2 {
+  font-size: calc(0.3rem + 0.9vw)
+}
+
 @layer utilities {
   .mt-39{
     margin-top: 136px;
@@ -83,6 +87,8 @@
 
 *{
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 

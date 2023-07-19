@@ -71,9 +71,9 @@ const Skills = ({HandleSkills, activeScroll}) => {
 
 
   return (
-    <motion.div ref={ref} initial="initial" whileInView="animate" transition={{staggerChildren: 0.1}} viewport={{once:false, amount: 0.4}} id='skills' className='flex-[0.9] lg:flex-[0.65] flex flex-col items-center w-full pt-4 bg-gray-700 my-32 dark:bg-black transition-all duration-500'>
-         <motion.p variants={header3} className='text-[36px] text-white text-center pt-16 font-body text-transform capitalize'>Tech & <span className='text-[#009D66]'>Tools</span> </motion.p>
-         <motion.p variants={header3} className='text-[20px] text-gray-500 w-[80%] text-center pt-6 pb-24 font-body leading-8 text-transform capitalize'>i have been working with recently</motion.p>
+    <motion.div ref={ref} initial="initial" whileInView="animate" transition={{staggerChildren: 0.1}} viewport={{once:false, amount: 0.4}} id='skills' className='flex-[1] md:flex-[0.9] mid:flex-[0.65] flex flex-col  items-center w-full pt-4 bg-gray-700 my-32 dark:bg-black transition-all duration-500'>
+         <motion.p  className='text-[30px] small:text-[36px] w-[80%] text-white text-center pt-16 font-body text-transform capitalize'>Tech & <span className='text-[#009D66]'>Tools</span> </motion.p>
+         <motion.p  className='text-[20px] text-gray-500 w-[80%] text-center pt-6 pb-24 font-body leading-8 text-transform capitalize'>i have been working with recently</motion.p>
          <motion.div initial="initial" whileInView="animate" viewport={{once: false, amount: 0.5}} transition={{staggerChildren: 0.15}} className='w-[60%] m-auto pt-24 relative h-[70vh]'>
             <motion.img variants={skills} src={frame24} alt="" className='w-[10%] top-[-5vh] absolute left-[-14%] object-contain' />
             <motion.img variants={skills} src={frame18} alt="" className='w-[10%] top-[51vh] absolute left-[-20%] object-contain' />

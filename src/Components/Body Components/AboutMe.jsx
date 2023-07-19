@@ -46,7 +46,7 @@ const AboutMe = ({HandleAbout, activeScroll}) => {
       transition: {
         duration: 7, delay: 0.25, type: "spring", bounce: 0.8,
       },
-    }
+    },
 
   }
 
@@ -60,9 +60,9 @@ const AboutMe = ({HandleAbout, activeScroll}) => {
   
 
   return (
-    <motion.div ref={ref} initial="initial" whileInView="animate" transition={{ staggerChildren: 0.1 }} viewport={{once:false, amount: 0.6}} id='about' className='flex-[0.9] lg:flex-[0.65] w-full bg-gray-700 relative mt-8 flex flex-col items-center dark:bg-black transition-all duration-500 '>
-      <motion.p variants={header3} className='text-[36px] w-[80%] text-white text-center  mt-20 font-body text-transform capitalize'>every successful journey begins with </motion.p>
-      <motion.p variants={header3} className='text-[36px] text-[#009D66] text-center mt-4 font-body '><span className='text-white'>A</span> Story<span className='text-white'>,</span></motion.p>
+    <motion.div ref={ref} initial="initial" whileInView="animate" transition={{ staggerChildren: 0.1 }} viewport={{once:false, amount: 0.6}} id='about' className='flex-[1] md:flex-[0.9] mid:flex-[0.65] w-full bg-gray-700 relative mt-8 flex flex-col items-center dark:bg-black transition-all duration-500 '>
+      <motion.p variants={header3} className='text-[30px] small:text-[36px] break-words w-[80%] text-white text-center  mt-20 font-body text-transform capitalize'>every successful journey begins with </motion.p>
+      <motion.p variants={header3} className=' text-[#009D66] text-center mt-4 font-body text-[30px] small:text-[36px] break-words w-[80%] '><span className='text-white'>A</span> Story<span className='text-white'>,</span></motion.p>
       <motion.div
         transition={{staggerChildren: 1}}
         className='text-sm w-[80%] md:text-sm lg:text-[1rem] text-gray-500 text-center mt-12 font-body leading-8'><motion.p className='leading-8' variants={header2}>I'm Richard Aboagye, a Frontend Engineer with a Bachelor’s Degree in Mechanical</motion.p>

@@ -78,17 +78,17 @@ const Home = ({HandleHome, activeScroll}) => {
             viewport={{once:false, amount: 0.3}}
             variants={homeAnimation}
             ref={ref}
-            id='home' className='flex-[0.9] mid:flex-[0.65] w-full bg-gray-700 flex flex-col items-center dark:bg-black '>
+            id='home' className='flex-[1] md:flex-[0.9] mid:flex-[0.65] w-full bg-gray-700 flex flex-col items-center dark:bg-black '>
 
             <div className='flex-[0.9] mid:flex-[0.65] w-full bg-gray-700 flex flex-col items-center dark:bg-black transition-all duration-500'>
                 <motion.p variants={header3} initial="hidden"
-                    whileInView="visible" className='text-[36px] w-[80%] text-white text-center pt-20 font-body '>Welcome Aboard! I Am </motion.p>
+                    whileInView="visible" className='text-[30px] small:text-[36px] break-words w-[80%] text-white text-center pt-20 font-body '>Welcome Aboard! I Am </motion.p>
                 <motion.p variants={header3} initial="hidden"
-                    whileInView="visible" className='text-[36px] w-[80%] text-[#009D66] text-center pt-4 font-body '>Richard<span className='text-white'>,</span></motion.p>
+                    whileInView="visible" className='text-[30px] small:text-[36px] w-[70%] text-[#009D66] text-center break-words pt-4 font-body '>Richard<span className='text-white'>,</span></motion.p>
                 <motion.div transition={{ staggerChildren: 0.8 }} initial="hidden"
                     whileInView="visible" viewport={{ once: false, amount: 0.6 }} className='text-sm w-[80%] md:text-sm lg:text-[1rem] text-gray-500 text-center pt-16 font-body leading-8'><motion.p className='leading-8' variants={header2}>A frontend enthusiast on a mission to banish the mundane</motion.p><motion.p className='leading-8' variants={header2}>and bring excitement to the Coding realm.</motion.p></motion.div>
                 <motion.div transition={{ staggerChildren: 0.5 }} initial="hidden"
-                    whileInView="visible" viewport={{ once: false, amount: 0.6 }} className='text-sm md:text-sm lg:text-[1rem] text-gray-500 text-center pt-16 font-body leading-8 mt-4 '><motion.p className='leading-8' variants={header4}>Coding boring stuff? Not on my watch! Immerse</motion.p> <motion.p className='leading-8' variants={header4}>yourself in my frontend projects and witness the</motion.p ><motion.p className='leading-8' variants={header4}>power of code come to life.</motion.p></motion.div>
+                    whileInView="visible" viewport={{ once: false, amount: 0.6 }} className='text-sm md:text-sm lg:text-[1rem] text-gray-500 text-center pt-16 font-body leading-8 mt-4 w-[80%] '><motion.p className='leading-8' variants={header4}>Coding boring stuff? Not on my watch! Immerse</motion.p> <motion.p className='leading-8' variants={header4}>yourself in my frontend projects and witness the</motion.p ><motion.p className='leading-8' variants={header4}>power of code come to life.</motion.p></motion.div>
                 <div className='w-[80%] small:w-[75%] mid:w-[70%] m-auto relative h-[45vh] my-20'>
                     <img src={object1} className='w-[20%] mid:w-[15%]  absolute top-[5%] left-[50%] object-contain transform translate-x-[-50%]' alt="" />
                     <img src={object2} className='w-[30%] mid:w-[25%] absolute top-[30%] left-[-2.5%] object-contain' alt="" />

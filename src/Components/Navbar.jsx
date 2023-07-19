@@ -192,7 +192,7 @@ const Navbar = ({sideMenu, changeTheme, activeHome, activeAbout, activeContact, 
 
   return (
     <>
-          <motion.nav initial="initial" animate="animate" variants={stagger2} className='py-4 ralative flex sticky top-0 bg-gray-700 shadow-2xl shadow-gray-950 w-full z-[999] px-4 items-center h-[58px] dark:bg-black transition-all dark:shadow-gray-700 dark:shadow-2xl duration-500'>
+          <motion.nav initial="initial" animate="animate" variants={stagger2} className='py-4 ralative flex fixed top-0 bg-gray-700 shadow-2xl shadow-gray-950 w-[94%] z-[999] px-4 items-center h-[58px] dark:bg-black transition-all dark:shadow-gray-700 dark:shadow-2xl duration-500'>
               <motion.img variants={header2} src={logo} alt="" className='sticky top-0 min-w-[60px] w-[5%] max-h-[36px] object-contain cursor-pointer' />
               <motion.img variants={header2} src={rich} className='w-[30px] h-[30px] ml-4 object-contain cursor-pointer rounded-full mid:hidden ' alt='avatar' onClick={sideMenu} />
               <div  className='hidden absolute left-[52.5%] transform translate-x-[-50%] gap-[3vw] justify-center items-center lg:flex'>

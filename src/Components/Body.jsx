@@ -11,7 +11,7 @@ const Body = ({HandleAbout, HandleContact, HandleHome, HandleProject, HandleSkil
 
   return (
     <div
-    className='rounded-2xl flex-[1] lg:flex-[0.65]'>
+    className='rounded-2xl flex-[1] md:flex-[0.9] mid:flex-[0.65]'>
       <Home HandleHome={HandleHome} activeScroll={activeScroll}/>
       <AboutMe HandleAbout={HandleAbout} activeScroll={activeScroll}/>
       <Skills HandleSkills={HandleSkills} activeScroll={activeScroll}/>

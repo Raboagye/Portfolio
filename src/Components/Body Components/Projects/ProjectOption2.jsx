@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProjectOption2 = () => {
   return (
-    <div className='container flex-[0.7] lg:flex-[0.65] w-full bg-gray-700 flex flex-col h-[100vh] relative perspective-1000 mt-16 z-[10]'>
+    <div className='container flex-[0.7] lg:flex-[0.65] w-full bg-gray-700 dark:bg-black flex flex-col h-[100vh] relative perspective-1000 mt-16 z-[10]'>
           <div className='group w-[400px] h-[400px] absolute right-[-60px] '>
               <div className='w-[250px] justify-center items-center h-[250px] transform-style-3d moveAnimate group'>
                   <div className='w-[250px] h-[250px] text-center py-[100px] text-white bg-black border-[2px] border-white text-[32px] box-border absolute  translate-z-[125px]  hover:bg-[#009D66] opacity-90 group-hover:translate-z-[250px]  duration-200 ease-in'>Front</div>
