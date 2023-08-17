@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 
 import { motion, useInView} from 'framer-motion'
+import richard from "./Richard.pdf"
 
 
 const AboutMe = ({HandleAbout, activeScroll}) => {
@@ -75,7 +76,7 @@ const AboutMe = ({HandleAbout, activeScroll}) => {
       <motion.div
         variants={header4}
         className='w-full pt-28 mb-16'>
-        <button className='bg-[#009D66] py-2 px-4 text-white font-body rounded-md download-inner-shadow border-[#009D66] absolute border-t-[1px] left-[50%] transform translate-x-[-50%] text-sm md:text-sm lg:text-[1rem]'>Download Cv</button>
+        <a href={richard} download="Resume"><button className='bg-[#009D66] py-2 px-4 text-white font-body rounded-md download-inner-shadow border-[#009D66] absolute border-t-[1px] left-[50%] transform translate-x-[-50%] text-sm md:text-sm lg:text-[1rem]'>Download Cv</button></a>
 
       </motion.div>
 

@@ -39,7 +39,7 @@ const LeftSideBar = () => {
       <motion.div className='flex-[0.2] w-full h-[calc(100vh-58px)] bg-transparent sticky top-[58px] px-4'>
         <motion.img initial={{ scale:0.7}} animate={{ scale: 1}} transition={{ duration:1}} src={rich} className='w-full object-contain mx-auto my-10'  alt="" />
         <motion.p variants={header2} className='text-gray-500 font-body text-center'>Front-end Engineer</motion.p>
-        <motion.p variants={header2} className='text-gray-500 font-body text-center mt-4'>www.richyaboagye@gmail.com</motion.p>
+        <motion.p variants={header2} className='text-gray-500 font-body text-center mt-4'>www.reactbyrichard@gmail.com</motion.p>
         <motion.p variants={header2} className='text-gray-500 font-body text-center mt-10'>© 2023 Richard, All Rights Reserved</motion.p>
         <motion.div variants={stagger2} className='flex gap-8 w-full justify-center my-10'>
           <motion.div variants={header2}>

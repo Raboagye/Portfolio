@@ -5,6 +5,7 @@ import { IoMdCheckmark } from 'react-icons/Io'
 import { useForm } from 'react-hook-form'
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup"
+import emailjs from '@emailjs/browser';
 
 const Contact = ({HandleContact, activeScroll}) => {
 
@@ -44,10 +45,42 @@ const Contact = ({HandleContact, activeScroll}) => {
         resolver: yupResolver(schema)
       })
 
-      const onSubmit = (e) => {
-        console.log(e)
-        setSendMail(true)
+
+      const sendIt = (e) => {
+        // e.preventDefault()
+
+        // emailjs.sendForm('service_gx0qx5s', 'template_sonopaf', e.target, 'SZpjDJ73Fhc7PuJ85')
+        //   .then((result) => {
+        //     console.log(result.text);
+        //   }, (error) => {
+        //     console.log(error.text);
+        //   });
+    
+        // e.target.reset() 
+    
+        const formElement = document.querySelector('form'); // Adjust the selector based on your HTML structure
+        emailjs.sendForm('service_gx0qx5s', 'template_sonopaf', formElement, 'SZpjDJ73Fhc7PuJ85')
+          .then((result) => {
+            console.log(result.text);
+          })
+          .catch((error) => {
+            console.log(error.text);
+          });
+
+          setTimeout(()=>{
+            formElement.reset()
+          }, 3800)
+ 
       }
+
+      const onSubmit = (data) => {
+        console.log(data)
+        sendIt(data)
+        setSendMail(true)
+
+       }
+
+  
     
 
   return (
@@ -55,22 +88,22 @@ const Contact = ({HandleContact, activeScroll}) => {
       <div  className='flex flex-col items-center w-full'>
 
         <p className='text-[30px] small:text-[36px] w-[80%] break-words text-white text-center pt-8 font-body '>Contact Richard</p>
-        <form  className='w-full small:w-[80%] md:min-w-[470px] md:w-[60%] bg-gray-700 transition-all duration-500 dark:bg-black mt-8 p-8 pb-0 flex flex-col items-center rounded-2xl' onSubmit={handleSubmit(onSubmit)}>
+        <form  className='w-full small:w-[80%] md:min-w-[470px] md:w-[60%] bg-gray-700 transition-all duration-500 dark:bg-black mt-8 p-8 pb-0 flex flex-col items-center rounded-2xl' onSubmit={handleSubmit(onSubmit)} >
           <div className='w-full relative'>
-            <input id='email-address' placeholder='richardaboagye100@gmail.com' type='text' className='w-full  h-8 border-0 border-b border-[#94A3B8] peer outline-0 bg-transparent py-1 pr-3 text-gray-400  focus:border-[#009D66] placeholder-transparent' {...register("email")}/>
+            <input id='email-address' placeholder='richardaboagye100@gmail.com' type='text' name='email-address' className='w-full  h-8 border-0 border-b border-[#94A3B8] peer outline-0 bg-transparent py-1 pr-3 text-gray-400  focus:border-[#009D66] placeholder-transparent' {...register("email")}/>
             {errors.email?.message && (<p className="text-red-700 font-semibold text-right text-[12px] absolute bottom-[-18px] right-0">Sender's Email Address is Required</p>)}
             <label for="email-address" className='absolute left-0 py-1 pr-3 -top-5  cursor-text text-gray-600  peer-focus:text-xs peer-focus:-top-5 ease-in-out text-xs peer-focus:text-[#009D66]  transition-all duration-300 uppercase peer-placeholder-shown:top-0 peer-placeholder-shown:text-sm'>Email</label>
           </div>
 
           <div className='my-12 w-full relative'>
-            <input placeholder='For your perusal' autoComplete='off' id='subject' type="text" className='w-full h-8 border-0 border-b border-[#94A3B8]  peer outline-0 bg-transparent py-1 pr-3 text-gray-400 focus:border-[#009D66] placeholder-transparent' {...register("subject")} />
+            <input placeholder='For your perusal' name='subject' autoComplete='off' id='subject' type="text" className='w-full h-8 border-0 border-b border-[#94A3B8]  peer outline-0 bg-transparent py-1 pr-3 text-gray-400 focus:border-[#009D66] placeholder-transparent' {...register("subject")} />
             {errors.subject?.message && (<p className="text-red-700 font-semibold text-right text-[12px] absolute bottom-[-18px] right-0">Enter The Message Subject</p>)}
             <label for="subject" className='absolute left-0 py-1 pr-3 -top-5 cursor-text text-gray-600  peer-focus:text-xs peer-focus:-top-5  ease-in-out peer-focus:text-[#009D66] font-semibold transition-all duration-300 uppercase  text-xs peer-placeholder-shown:top-0 peer-placeholder-shown:text-sm'>Subject </label>
 
           </div>
 
           <div className='mb-12 w-full relative'>
-            <textarea placeholder='this is the message' id='message' className='w-full h-[150px] box-border resize-none border-0 border-b border-[#94A3B8]  peer outline-0 bg-transparent py-1 pr-3 text-gray-400 focus:border-[#009D66] placeholder-transparent' {...register("message")} />
+            <textarea placeholder='this is the message' name='message' id='message' className='w-full h-[150px] box-border resize-none border-0 border-b border-[#94A3B8]  peer outline-0 bg-transparent py-1 pr-3 text-gray-400 focus:border-[#009D66] placeholder-transparent' {...register("message")} />
             {errors.message?.message && (<p className="text-red-700 font-semibold text-right text-[12px] absolute bottom-[-12px] right-0"> Enter The Message Here</p>)}
             <label for="message" className='absolute left-0 py-1 pr-3 text-xs cursor-text text-gray-600  peer-focus:text-xs peer-focus:-top-5  ease-in-out peer-focus:text-[#009D66] transition-all duration-300 -top-5 peer-placeholder-shown:top-0 peer-placeholder-shown:text-sm uppercase'>Message</label>
           </div>
@@ -130,7 +163,7 @@ const Contact = ({HandleContact, activeScroll}) => {
               <p className='font-body text-[#009D66]'>OR</p>
               <div className='w-[15%] border h-0 border-t-gray-500'></div>
             </div>
-            <p className='font-body text-[#94A3B8] break-words w-[80%] text-center px-2'>www.richyaboagye@gmail.com</p>
+            <p className='font-body text-[#94A3B8] break-words w-[80%] text-center px-2'>www.reactbyrichard@gmail.com</p>
           </div>
 
       </div>

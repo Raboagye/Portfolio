@@ -3,6 +3,8 @@ import Project from './Projects/Project'
 import ProjectOption2 from './Projects/ProjectOption2'
 import { motion } from 'framer-motion'
 import ProjectOption3 from './Projects/ProjectOption3'
+import ProjectOption4 from './Projects/ProjectOption4'
+import ProjectOption5 from './Projects/ProjectOptions5'
 
 const Works = ({HandleProject, activeScroll }) => {
 
@@ -14,9 +16,11 @@ const Works = ({HandleProject, activeScroll }) => {
         <Project HandleProject={HandleProject} activeScroll={activeScroll}/>
         {/* <ProjectOption2/> */}
         <ProjectOption3 HandleProject={HandleProject} activeScroll={activeScroll}/>
-        <Project HandleProject={HandleProject} activeScroll={activeScroll}/>
+        <ProjectOption2 HandleProject={HandleProject} activeScroll={activeScroll}/>
         {/* <ProjectOption2/> */}
-        <ProjectOption3 HandleProject={HandleProject} activeScroll={activeScroll}/>
+        <ProjectOption4 HandleProject={HandleProject} activeScroll={activeScroll}/>
+        <ProjectOption5 HandleProject={HandleProject} activeScroll={activeScroll}/>
+        
     </>
   )
 }

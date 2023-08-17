@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 
-const ProjectOption3 = ({HandleProject, activeScroll}) => {
+const ProjectOption4 = ({HandleProject, activeScroll}) => {
   const ref = useRef(null)
   const isInView = useInView(ref)
   const mainControls = useAnimation()
@@ -48,7 +48,7 @@ const ProjectOption3 = ({HandleProject, activeScroll}) => {
 
   return (
     <div 
-     className=' flex-[1] md:flex-[0.9] mid:flex-[0.65] w-full pb-60 md:pb-80 mdium:h-[100vh] mdium:pb-0 relative perspective-1000 mt-28 flex flex-col items-center mdium:items-start mdium:pl-16 lg:pl-0'>
+     className=' flex-[1] md:flex-[0.9] mid:flex-[0.65] w-full pb-60 md:pb-80 mdium:h-[100vh] mdium:pb-0 relative perspective-1000 mt-32 flex flex-col items-center mdium:items-start mdium:pl-16 lg:pl-0'>
           <div className='group w-[350px] h-[350px] md:w-[400px] md:h-[400px] flex justify-center mdium:justify-start mdium:absolute mdium:right-[-60px]'>
               <div className='w-[125px] h-[125px] md:w-[250px]  md:h-[250px] transform-style-3d moveAnimate group mt-20 cursor-pointer' onClick={()=>openLink("https://yts.mx")}>
                   {/* <div className='w-[125px] h-[125px] md:w-[250px]  md:h-[250px] text-center py-[50px] md:py-[100px] text-white bg-black border-[2px] border-white text-[32px] box-border absolute translate-z-[62.5px]  md:translate-z-[125px]  hover:bg-[#009D66] opacity-90 group-hover:translate-z-[125px] md:group-hover:translate-z-[250px]  duration-200 ease-in'>Front</div>
@@ -79,11 +79,11 @@ const ProjectOption3 = ({HandleProject, activeScroll}) => {
          
           
           className='w-[90%] mdium:w-[43%] top-80 flex flex-col items-center absolute md:top-96  mdium:left-8 pt-4 md:mt-16'>
-              <p className='text-[20px] hover:text-white text-center pt-8 font-body text-sm md:text-sm lg:text-[1rem] cursor-pointer text-[#099D66]' onClick={()=>openLink("https://yts.mx")}>Gmail Clone </p>
+              <p className='text-[20px] hover:text-white text-center pt-8 font-body text-sm md:text-sm lg:text-[1rem] cursor-pointer text-[#099D66]' onClick={()=>openLink("https://yts.mx")}>Netflix Clone</p>
               <div>
-                  <p className='text-gray-500 pt-8 font-body text-sm md:text-sm lg:text-[1rem]'>• A fully responsive email client web application powered by:</p>
-                  <p className='text-gray-500 pt-4 font-body text-sm md:text-sm lg:text-[1rem]'>• React | Redux | React Router DOM | Axios | React Hook Form | Material-UI | Firebase</p>
-                  <details><summary className='text-[#009D66] mt-2 cursor-pointer'>more</summary><p className='pt-4 font-body text-gray-500 text-sm md:text-sm lg:text-[1rem]'>Expertly employed React, JSX, React Router DOM, and Redux for state management in creating dynamic interfaces with smooth navigation, leveraging Axios, Material-UI, Firebase, and Bootstrap CSS for enhanced functionality, accessibility, and responsive design.</p></details>
+                  <p className='text-gray-500 pt-8 font-body text-sm md:text-sm lg:text-[1rem]'>• Created a feature-rich streaming web application, inspired by Netflix, using an array of advanced technologies:</p>
+                  <p className='text-gray-500 pt-4 font-body text-sm md:text-sm lg:text-[1rem]'>• React | Redux Toolkit | Firebase | Axios</p>
+                  <details><summary className='text-[#009D66] mt-2 cursor-pointer'>more</summary><p className='pt-4 text-gray-500 font-body  text-sm md:text-sm lg:text-[1rem]'>Merged React, Redux Toolkit, Firebase, and Axios to craft an immersive streaming platform, combining efficient state management, authentication, API communication, and a responsive UI.</p></details>
               </div>
 
 
@@ -93,4 +93,4 @@ const ProjectOption3 = ({HandleProject, activeScroll}) => {
   )
 }
 
-export default ProjectOption3
+export default ProjectOption4

@@ -80,11 +80,11 @@ const Project = ({HandleProject, activeScroll}) => {
          
           
           className='w-[90%] mdium:w-[43%] top-80 md:top-48 flex flex-col items-center absolute mdium:right-0 pt-4 md:mt-64'>
-              <p className='text-[20px] hover:text-white text-center pt-8 font-body text-sm md:text-sm lg:text-[1rem] cursor-pointer text-[#099D66] hover:underline-offset-8' onClick={()=>openLink("https://yts.mx")}>Musix: A Music App</p>
+              <p className='text-[20px] hover:text-white text-center pt-8 font-body text-sm md:text-sm lg:text-[1rem] cursor-pointer text-[#099D66] hover:underline-offset-8' onClick={()=>openLink("https://yts.mx")}>Multimart: An Ecommerce Web App</p>
               <div>
-                  <p className='text-gray-500 pt-8 font-body text-sm md:text-sm lg:text-[1rem]'>• Fully functional music app just like a MERN stack web app</p>
-                  <p className='text-gray-500 pt-4 font-body text-sm md:text-sm lg:text-[1rem]'>• Populated with</p>
-                  <p className='pt-4 font-body text-gray-500 text-sm md:text-sm lg:text-[1rem]'>React Tailwind Redux Firebase</p>
+                  <p className='text-gray-500 pt-8 font-body text-sm md:text-sm lg:text-[1rem]'>• A Fully responsive Ecommerce Web app  Populated with </p>
+                  <p className='text-gray-500 pt-4 font-body text-sm md:text-sm lg:text-[1rem]'>• React | Redux | Bootstrap CSS| React Router DOM |Axios | JSX | Material-UI | Firebase</p>
+                  <details className='text-[#099D66] mt-2 '><summary className='cursor-pointer'>more</summary><p className='pt-4 font-body text-gray-500 text-sm md:text-sm lg:text-[1rem] '>Expertly employed React, JSX, React Router DOM, and Redux for state management dynamic interfaces with smooth navigation. Utilized Axios, Material-UI, Firebase, and Bootstrap CSS for enhanced functionality, accessibility, and responsive design</p></details>
               </div>
 
 
